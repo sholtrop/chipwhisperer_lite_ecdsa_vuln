@@ -1,0 +1,4 @@
+simpleserial-ecc-vuln-CWLITEARM.*
+simpleserial-ecrsa-CWLITEARM.*
+.dep/
+objdir-*

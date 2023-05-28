@@ -1,0 +1,656 @@
+SS_VER set to SS_VER_1_1
+SS_VER set to SS_VER_1_1
+SS_VER set to SS_VER_1_1
+SS_VER set to SS_VER_1_1
+make[1]: '.dep' is up to date.
+SS_VER set to SS_VER_1_1
+SS_VER set to SS_VER_1_1
+.
+Welcome to another exciting ChipWhisperer target build!!
+arm-none-eabi-gcc (15:10.3-2021.07-4) 10.3.1 20210621 (release)
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+.
+Compiling:
+-en     simpleserial-ecc.c ...
+In file included from simpleserial-ecc.c:19:
+.././crypto/micro-ecc-vulnerable/types.h:59:13: note: '#pragma message: uECC_WORD_SIZE must be 4 for ARM'
+   59 |     #pragma message ("uECC_WORD_SIZE must be 4 for ARM")
+      |             ^~~~~~~
+.././crypto/micro-ecc-vulnerable/types.h:70:9: error: unknown type name 'int8_t'
+   70 | typedef int8_t wordcount_t;
+      |         ^~~~~~
+.././crypto/micro-ecc-vulnerable/types.h:71:9: error: unknown type name 'int16_t'
+   71 | typedef int16_t bitcount_t;
+      |         ^~~~~~~
+.././crypto/micro-ecc-vulnerable/types.h:72:9: error: unknown type name 'int8_t'
+   72 | typedef int8_t cmpresult_t;
+      |         ^~~~~~
+.././crypto/micro-ecc-vulnerable/types.h:86:9: error: unknown type name 'uint32_t'
+   86 | typedef uint32_t uECC_word_t;
+      |         ^~~~~~~~
+.././crypto/micro-ecc-vulnerable/types.h:87:9: error: unknown type name 'uint64_t'
+   87 | typedef uint64_t uECC_dword_t;
+      |         ^~~~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:266:19: error: conflicting types for 'uECC_vli_mult'
+  266 | uECC_VLI_API void uECC_vli_mult(uint32_t *result,
+      |                   ^~~~~~~~~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:4,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC_vli.h:63:6: note: previous declaration of 'uECC_vli_mult' was here
+   63 | void uECC_vli_mult(uECC_word_t *result,
+      |      ^~~~~~~~~~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c: In function 'uECC_vli_square':
+.././crypto/micro-ecc-vulnerable/uECC.c:519:17: warning: passing argument 1 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  519 |   uECC_vli_mult(result, left, left, num_words);
+      |                 ^~~~~~
+      |                 |
+      |                 uECC_word_t * {aka int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:266:43: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uECC_word_t *' {aka 'int *'}
+  266 | uECC_VLI_API void uECC_vli_mult(uint32_t *result,
+      |                                 ~~~~~~~~~~^~~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:519:25: warning: passing argument 2 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  519 |   uECC_vli_mult(result, left, left, num_words);
+      |                         ^~~~
+      |                         |
+      |                         const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:267:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  267 |                                 const uint32_t *left,
+      |                                 ~~~~~~~~~~~~~~~~^~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:519:31: warning: passing argument 3 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  519 |   uECC_vli_mult(result, left, left, num_words);
+      |                               ^~~~
+      |                               |
+      |                               const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:268:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  268 |                                 const uint32_t *right,
+      |                                 ~~~~~~~~~~~~~~~~^~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c: In function 'uECC_vli_modMult':
+.././crypto/micro-ecc-vulnerable/uECC.c:605:17: warning: passing argument 1 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  605 |   uECC_vli_mult(product, left, right, num_words);
+      |                 ^~~~~~~
+      |                 |
+      |                 uECC_word_t * {aka int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:266:43: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uECC_word_t *' {aka 'int *'}
+  266 | uECC_VLI_API void uECC_vli_mult(uint32_t *result,
+      |                                 ~~~~~~~~~~^~~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:605:26: warning: passing argument 2 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  605 |   uECC_vli_mult(product, left, right, num_words);
+      |                          ^~~~
+      |                          |
+      |                          const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:267:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  267 |                                 const uint32_t *left,
+      |                                 ~~~~~~~~~~~~~~~~^~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:605:32: warning: passing argument 3 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  605 |   uECC_vli_mult(product, left, right, num_words);
+      |                                ^~~~~
+      |                                |
+      |                                const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:268:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  268 |                                 const uint32_t *right,
+      |                                 ~~~~~~~~~~~~~~~~^~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c: In function 'uECC_vli_modMult_fast':
+.././crypto/micro-ecc-vulnerable/uECC.c:614:17: warning: passing argument 1 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  614 |   uECC_vli_mult(product, left, right, curve->num_words);
+      |                 ^~~~~~~
+      |                 |
+      |                 uECC_word_t * {aka int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:266:43: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uECC_word_t *' {aka 'int *'}
+  266 | uECC_VLI_API void uECC_vli_mult(uint32_t *result,
+      |                                 ~~~~~~~~~~^~~~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:614:26: warning: passing argument 2 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  614 |   uECC_vli_mult(product, left, right, curve->num_words);
+      |                          ^~~~
+      |                          |
+      |                          const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:267:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  267 |                                 const uint32_t *left,
+      |                                 ~~~~~~~~~~~~~~~~^~~~
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:614:32: warning: passing argument 3 of 'uECC_vli_mult' from incompatible pointer type [-Wincompatible-pointer-types]
+  614 |   uECC_vli_mult(product, left, right, curve->num_words);
+      |                                ^~~~~
+      |                                |
+      |                                const uECC_word_t * {aka const int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:268:49: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'const uECC_word_t *' {aka 'const int *'}
+  268 |                                 const uint32_t *right,
+      |                                 ~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc: At top level:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:883:13: error: conflicting types for 'vli_mmod_fast_secp256r1'
+  883 | static void vli_mmod_fast_secp256r1(uint32_t *result, uint32_t *product) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:733:13: note: previous declaration of 'vli_mmod_fast_secp256r1' was here
+  733 | static void vli_mmod_fast_secp256r1(uECC_word_t *result, uECC_word_t *product);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+.././crypto/micro-ecc-vulnerable/curve-specific.inc: In function 'vli_mmod_fast_secp256r1':
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:888:18: warning: passing argument 1 of 'uECC_vli_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  888 |     uECC_vli_set(result, product, num_words_secp256r1);
+      |                  ^~~~~~
+      |                  |
+      |                  uint32_t * {aka long unsigned int *}
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:263:45: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  263 | uECC_VLI_API void uECC_vli_set(uECC_word_t *dest, const uECC_word_t *src,
+      |                                ~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:888:26: warning: passing argument 2 of 'uECC_vli_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  888 |     uECC_vli_set(result, product, num_words_secp256r1);
+      |                          ^~~~~~~
+      |                          |
+      |                          uint32_t * {aka long unsigned int *}
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:263:70: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  263 | uECC_VLI_API void uECC_vli_set(uECC_word_t *dest, const uECC_word_t *src,
+      |                                                   ~~~~~~~~~~~~~~~~~~~^~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:897:26: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  897 |     carry = uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                          ^~~
+      |                          |
+      |                          uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:897:31: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  897 |     carry = uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                               ^~~
+      |                               |
+      |                               uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:897:36: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  897 |     carry = uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                                    ^~~
+      |                                    |
+      |                                    uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:898:27: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  898 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:898:35: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  898 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:898:43: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  898 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:906:27: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  906 |     carry += uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                           ^~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:906:32: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  906 |     carry += uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                                ^~~
+      |                                |
+      |                                uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:906:37: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  906 |     carry += uECC_vli_add(tmp, tmp, tmp, num_words_secp256r1);
+      |                                     ^~~
+      |                                     |
+      |                                     uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:907:27: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  907 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:907:35: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  907 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:907:43: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  907 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:916:27: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  916 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:916:35: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  916 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:916:43: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  916 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:927:27: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  927 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:927:35: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  927 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:927:43: warning: passing argument 3 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  927 |     carry += uECC_vli_add(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:48:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   48 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:936:27: warning: passing argument 1 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  936 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:100:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  100 | uECC_VLI_API uECC_word_t uECC_vli_sub(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:936:35: warning: passing argument 2 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  936 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:101:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  101 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:936:43: warning: passing argument 3 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  936 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:102:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  102 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:946:27: warning: passing argument 1 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  946 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:100:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  100 | uECC_VLI_API uECC_word_t uECC_vli_sub(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:946:35: warning: passing argument 2 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  946 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:101:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  101 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:946:43: warning: passing argument 3 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  946 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:102:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  102 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:957:27: warning: passing argument 1 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  957 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:100:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  100 | uECC_VLI_API uECC_word_t uECC_vli_sub(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:957:35: warning: passing argument 2 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  957 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:101:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  101 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:957:43: warning: passing argument 3 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  957 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:102:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  102 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:968:27: warning: passing argument 1 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  968 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                           ^~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:100:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  100 | uECC_VLI_API uECC_word_t uECC_vli_sub(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:968:35: warning: passing argument 2 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  968 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:101:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  101 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:968:43: warning: passing argument 3 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  968 |     carry -= uECC_vli_sub(result, result, tmp, num_words_secp256r1);
+      |                                           ^~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:102:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  102 |                                       const uECC_word_t *right,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:972:35: warning: passing argument 1 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  972 |             carry += uECC_vli_add(result, result, curve_secp256r1.p, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:46:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   46 | uECC_VLI_API uECC_word_t uECC_vli_add(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:972:43: warning: passing argument 2 of 'uECC_vli_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  972 |             carry += uECC_vli_add(result, result, curve_secp256r1.p, num_words_secp256r1);
+      |                                           ^~~~~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:47:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+   47 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:975:64: warning: passing argument 2 of 'uECC_vli_cmp_unsafe' from incompatible pointer type [-Wincompatible-pointer-types]
+  975 |         while (carry || uECC_vli_cmp_unsafe(curve_secp256r1.p, result, num_words_secp256r1) != 1) {
+      |                                                                ^~~~~~
+      |                                                                |
+      |                                                                uint32_t * {aka long unsigned int *}
+In file included from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/uECC.c:274:59: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  274 |                                        const uECC_word_t *right,
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:976:35: warning: passing argument 1 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  976 |             carry -= uECC_vli_sub(result, result, curve_secp256r1.p, num_words_secp256r1);
+      |                                   ^~~~~~
+      |                                   |
+      |                                   uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:100:52: note: expected 'uECC_word_t *' {aka 'int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  100 | uECC_VLI_API uECC_word_t uECC_vli_sub(uECC_word_t *result,
+      |                                       ~~~~~~~~~~~~~^~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:976:43: warning: passing argument 2 of 'uECC_vli_sub' from incompatible pointer type [-Wincompatible-pointer-types]
+  976 |             carry -= uECC_vli_sub(result, result, curve_secp256r1.p, num_words_secp256r1);
+      |                                           ^~~~~~
+      |                                           |
+      |                                           uint32_t * {aka long unsigned int *}
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:175,
+                 from simpleserial-ecc.c:20:
+.././crypto/micro-ecc-vulnerable/asm_arm.inc:101:58: note: expected 'const uECC_word_t *' {aka 'const int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  101 |                                       const uECC_word_t *left,
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~
+In file included from simpleserial-ecc.c:34:
+.././hal/stm32f3/CMSIS/core/core_cm4.h: At top level:
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1626:37: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1626 | __STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                     ^~~~~~~~~
+      |                                     ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1637:38: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1637 | __STATIC_INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                      ^~~~~~~~~
+      |                                      ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1650:45: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1650 | __STATIC_INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+      |                                             ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1661:41: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1661 | __STATIC_INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                         ^~~~~~~~~
+      |                                         ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1672:43: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1672 | __STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+      |                                           ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1685:41: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1685 | __STATIC_INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)
+      |                                         ^~~~~~~~~
+      |                                         ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1698:39: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1698 | __STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                       ^~~~~~~~~
+      |                                       ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1720:43: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1720 | __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+      |                                           ITM_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h: In function 'NVIC_EncodePriority':
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1751:64: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+ 1751 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^~~~~~~~~~~~~~~~
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1751:64: note: each undeclared identifier is reported only once for each function it appears in
+.././hal/stm32f3/CMSIS/core/core_cm4.h: In function 'NVIC_DecodePriority':
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1778:64: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+ 1778 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^~~~~~~~~~~~~~~~
+.././hal/stm32f3/CMSIS/core/core_cm4.h: In function 'SysTick_Config':
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1838:21: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+ 1838 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                     ^~~~~~~~~~~~
+      |                     SysTick_Type
+.././hal/stm32f3/CMSIS/core/core_cm4.h:1838:43: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+ 1838 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                                           ^~~~~~~~~~~~~~~~
+In file included from .././crypto/micro-ecc-vulnerable/uECC.c:729,
+                 from simpleserial-ecc.c:20:
+simpleserial-ecc.c: At top level:
+.././crypto/micro-ecc-vulnerable/curve-specific.inc:733:13: warning: 'vli_mmod_fast_secp256r1' used but never defined
+  733 | static void vli_mmod_fast_secp256r1(uECC_word_t *result, uECC_word_t *product);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+make[1]: *** [.././Makefile.inc:495: objdir-CWLITEARM/simpleserial-ecc.o] Error 1
+make: *** [.././Makefile.inc:338: all] Error 2
